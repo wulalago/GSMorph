@@ -1,2 +1,2 @@
 # GSMorph
-Gradient Surgery for Hyperparamer-free Deformable Registration in Cardiac MRI
+This repository is the implementation of the GSMorph for deformable image registration by Haoran Dou in CISTIB at University of Leeds.
