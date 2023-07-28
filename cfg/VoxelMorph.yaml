@@ -1,0 +1,53 @@
+GPUId: 0
+Seed: 3407
+
+# Path
+DataPath: ../datasets/ACDC
+TextPath: ../checkpoints/archive_text_acdc
+CheckpointsPath: ../checkpoints/VoxelMorph
+
+# Data Structure
+MovingTimePoint: ES
+FixedTimePoint: ED
+ImgSize: 128
+
+# Network Setup
+ModelType: VoxelMorph
+BackBone: UNet
+FeatNum:
+  - 16
+  - 32
+  - 64
+  - 128
+  - 256
+IntegrateConfig:
+  UseIntegrate: False
+  TimeStep: 8
+
+# Optimization for Training
+InitWeight: null
+LearningRate: 0.005
+WeightDecay: 0.0
+BatchSize: 32
+NumWorkers: 0
+StartEpoch: 1
+NumEpoch: 500
+ValFreq: 5
+SimLoss: MSE
+RegLoss: Grad
+GradientSurgery: null
+LossWeight:
+  Similarity: 1
+  Smoothness: 0.01
+
+# Evaluation
+LabelMapping:
+    1: 'RV'
+    2: 'Myo'
+    3: 'LV'
+#LabelMapping:
+#    1: 'LV'
+#    2: 'Myo'
+#    3: 'RV'
+EfficientSave: True
+LoadChoice: last
